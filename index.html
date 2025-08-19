@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vigneshayyanar M - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-bg: #000;
+      --secondary: #ff6347;
+      --tertiary: #d8bfd8;
+      --text-light: #fff;
+      --text-muted: #bbb;
+      --card-bg: #111;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--primary-bg);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--card-bg);
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-left img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-right: 12px;
+      border: 2px solid var(--secondary);
+    }
+
+    .nav-left .name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--text-light);
+    }
+
+    .nav-left .title {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .nav-right {
+      display: flex;
+    }
+
+    .nav-right a {
+      color: var(--tertiary);
+      margin-left: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-right a:hover {
+      color: var(--secondary);
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: var(--card-bg);
+    }
+    header h1 {
+      font-size: 3rem;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      color: var(--text-light);
+    }
+    header p {
+      margin: 1rem 0;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+    }
+    .social-links a {
+      margin: 0 12px;
+      font-size: 1.5rem;
+      color: var(--text-light);
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: var(--secondary);
+    }
+
+    section {
+      margin: 1rem auto;
+      padding: 1rem;
+      max-width: 1100px;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--text-light);
+      border-bottom: 2px solid var(--secondary);
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--tertiary);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      border-color: var(--secondary);
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(255, 99, 71, 0.3);
+    }
+
+    .card h3 {
+      color: var(--secondary);
+      margin-top: 0;
+    }
+    .card p {
+      color: var(--text-muted);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--secondary);
+      color: #fff;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: var(--tertiary);
+      color: #000;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      border: #d8bfd8 solid;
+      border-radius: 5px;
+    }
+    table th, table td {
+      padding: 12px;
+      border-bottom: 1px solid #333;
+    }
+    table thead tr {
+      background: #111;
+      color: #ff6347;
+      text-align: left;
+    }
+    table th {
+      border-bottom: 2px solid #ff6347;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--tertiary);
+    }
+    form input, form textarea {
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+    form button {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 30px;
+      background: var(--secondary);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    form button:hover {
+      background: var(--tertiary);
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--card-bg);
+      color: var(--tertiary);
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <img src="LinkedIN.jpg" alt="Profile Photo">
+      <div>
+        <div class="name" style="font-size: larger;">Vigneshayyanar M</div>
+        <p class="title">Full Stack Developer</p>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="mailto:vigneshayyanarm05@gmail.com">
+        <i class="fas fa-envelope" style="font-size: 28px;"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/vigneshayyanar-m-3b1823293/" target="_blank">
+        <i class="fab fa-linkedin" style="font-size: 28px;"></i>
+      </a>
+      <a href="https://github.com/MVigneshayyanar" target="_blank">
+        <i class="fab fa-github" style="font-size: 28px;"></i>
+      </a>
+    </div>
+  </nav>
+
+  <section id="about" style="margin-top: 0%;margin-bottom: 0%;">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate Full Stack App Developer specializing in Flutter and Firebase, with additional expertise in Web Development using React and MongoDB. I enjoy building scalable applications, designing responsive websites, solving complex problems, and exploring new technologies.
+    </p>
+  </section>
+
+  <section id="skills" style="margin-top: 0%;padding-top:0%;">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">C, C++, Java, Python</div>
+      <div class="card">Flutter & Dart</div>
+      <div class="card">React</div>
+      <div class="card">MongoDB</div>
+      <div class="card">Firebase</div>
+      <div class="card">AWS</div>
+      <div class="card">Database Management</div>
+      <div class="card">UI/UX Design</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Harvest Hub</h3>
+        <p>A Flutter app where donors can post extra food or items and others can easily view and collect them. Integrated with Firebase authentication and real-time database.</p>
+        <a href="https://github.com/MVigneshayyanar/harvesthub.git" class="btn" target="_blank">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>Attendance Management System</h3>
+        <p>A Flutter + Firebase system for students and staff with role-based login, attendance tracking, notifications, and reports.</p>
+        <a href="https://github.com/MVigneshayyanar/harvesthub.git" class="btn" target="_blank">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>Contact Management App</h3>
+        <p>Flutter app with Firebase backend that manages contacts, recent calls, dialer integration, and authentication (signup/login).</p>
+        <a href="https://github.com/MVigneshayyanar/contactbook.git" class="btn" target="_blank">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>EcoLifeBuddy</h3>
+        <p>AI-powered surveillance system using OpenCV & TensorFlow to detect environmental violations like littering in public places, capturing evidence and sending real-time alerts.</p>
+        <a href="https://github.com/MVigneshayyanar/Connect-Four-Game.git" class="btn" target="_blank">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>Application Control (AC)</h3>
+        <p>Windows app in C++ for pre-execution blocking of blacklisted applications based on executable name, hash, vendor, or product name.</p>
+        <a href="https://github.com/MVigneshayyanar/ApplicationControl.git" class="btn" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Ignito Corporation</h3>
+        <p><strong>Full Stack App Developer Intern</strong><br>
+        Jul 2025 – Present · Remote<br>
+        Mobile Application Development and Firebase</p>
+      </div>
+      <div class="card">
+        <h3>Brainovision Solutions India Pvt. Ltd.</h3>
+        <p><strong>AWS Intern</strong><br>
+        Feb 2025 – Jun 2025 · Remote<br>
+        Worked with AWS services for deployment and scaling</p>
+      </div>
+      <div class="card">
+        <h3>InternPe</h3>
+        <p><strong>Web Developer Intern</strong><br>
+        Jan 2025 – Feb 2025 · Remote<br>
+        Web development using modern technologies</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <table style="border-collapse: collapse;
+      margin-top: 1rem;
+      border: #d8bfd8 solid;
+      border-radius: 5px">
+      <thead>
+        <tr>
+          <th>Institution</th>
+          <th>Degree</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sri Sairam Engineering College</td>
+          <td>M.Tech in Computer Science and Engineering (Integrated 5-Year)</td>
+          <td>2023 – Present</td>
+        </tr>
+        <tr>
+          <td>Little Flower Matric. Hr. Sec. School</td>
+          <td>12th Standard</td>
+          <td>2023</td>
+        </tr>
+        <tr>
+          <td>Little Flower Matric. Hr. Sec. School</td>
+          <td>10th Standard</td>
+          <td>2021</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:vigneshayyanarm05@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+</body>
+</html>
