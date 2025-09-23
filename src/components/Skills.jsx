@@ -85,9 +85,6 @@ function Skills() {
 
       {/* Floating Badges */}
      <div className="mt-16">
-  <h3 className="font-montserrat text-xl text-text-light mb-8 text-center">
-    Technologies & Tools
-  </h3>
   <div className="flex flex-wrap justify-center items-center gap-4">
     {[
       { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', gradient: 'from-blue-400 to-cyan-400' },

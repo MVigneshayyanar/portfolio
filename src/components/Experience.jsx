@@ -41,7 +41,7 @@ function Experience() {
         {experiences.map((exp, index) => (
           <div 
             key={index} 
-            className="bg-card-bg p-8 rounded-xl border border-tertiary hover:border-secondary hover:-translate-y-2 hover:shadow-lg hover:shadow-secondary/30 transition-all duration-300"
+            className="backdrop-blur-sm  p-8 rounded-xl border border-white/20 hover:border-secondary hover:-translate-y-2 hover:shadow-lg hover:shadow-secondary/30 transition-all duration-300 "
           >
             <h3 className="text-secondary text-xl font-semibold mb-2">{exp.company}</h3>
             <p className="text-text-muted mb-4">

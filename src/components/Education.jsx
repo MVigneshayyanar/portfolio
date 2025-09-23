@@ -20,29 +20,43 @@ function Education() {
   ];
 
   return (
-    <section id="education" className="max-w-6xl mx-auto px-4 py-8">
-      <h2 className="font-montserrat text-2xl md:text-3xl text-text-light border-b-2 border-secondary inline-block pb-2 mb-8">
-        Education
-      </h2>
-      <div className="overflow-x-auto">
-        <table className="w-full border border-tertiary rounded-lg overflow-hidden">
-          <thead className="bg-card-bg">
-            <tr>
-              <th className="px-4 py-4 text-left text-secondary font-bold border-b-2 border-secondary">Institution</th>
-              <th className="px-4 py-4 text-left text-secondary font-bold border-b-2 border-secondary">Degree</th>
-              <th className="px-4 py-4 text-left text-secondary font-bold border-b-2 border-secondary">Year</th>
-            </tr>
-          </thead>
-          <tbody>
+    <section id="education" className="sticky top-0 z-50 p-3 md:p-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="backdrop-blur-sm bg-black/30 rounded-2xl px-4 py-3 md:px-6 md:py-4 border border-white/10">
+          
+          {/* Section Header */}
+          <div className="flex items-center gap-3 mb-4">
+            <div>
+              <h2 className="font-montserrat font-bold text-sm sm:text-base text-text-light">Education</h2>
+              <p className="text-xs text-tertiary">Academic Background</p>
+            </div>
+          </div>
+          
+          {/* Education Content */}
+          <div className="space-y-4">
             {educationData.map((edu, index) => (
-              <tr key={index} className="border-b border-gray-700 last:border-b-0">
-                <td className="px-4 py-4 text-text-muted">{edu.institution}</td>
-                <td className="px-4 py-4 text-text-muted">{edu.degree}</td>
-                <td className="px-4 py-4 text-text-muted">{edu.year}</td>
-              </tr>
+              <div 
+                key={index}
+                className="backdrop-blur-sm bg-white/5 rounded-xl px-4 py-3 border border-white/10 hover:border-secondary/50 transition-all duration-300 hover:bg-white/10"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-sm sm:text-base text-text-light mb-1">
+                      {edu.institution}
+                    </h3>
+                    <p className="text-text-muted text-xs sm:text-sm">
+                      {edu.degree}
+                    </p>
+                  </div>
+                  <div className="text-secondary font-medium text-xs sm:text-sm bg-secondary/10 px-3 py-1 rounded-full border border-secondary/30">
+                    {edu.year}
+                  </div>
+                </div>
+              </div>
             ))}
-          </tbody>
-        </table>
+          </div>
+
+        </div>
       </div>
     </section>
   );

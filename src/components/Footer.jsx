@@ -2,53 +2,65 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-card-bg text-center px-4 py-8 mt-16">
+    <footer className="p-3 md:p-4">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-8">
-          <h3 className="text-secondary font-montserrat text-xl mb-4">Let's Connect!</h3>
-          <p className="text-text-muted mb-6 max-w-2xl mx-auto">
+        <div className="backdrop-blur-sm bg-black/30 rounded-2xl px-4 py-3 md:px-6 md:py-4 border border-white/10">
+          
+          {/* Header Section */}
+          <div className="flex items-center gap-3 mb-4">
+            <div>
+              <h3 className="font-montserrat font-bold text-base sm:text-lg text-text-light">Let's Connect!</h3>
+              <p className="text-xs text-tertiary">Ready to collaborate</p>
+            </div>
+          </div>
+          
+          {/* Main Content */}
+          <div className="text-text-muted text-sm sm:text-base leading-relaxed mb-6">
             Ready to bring your app ideas to life? I'm always excited to work on innovative Flutter projects and collaborate with amazing teams.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-8">
+          </div>
+          
+          {/* Social Links - Compact Style */}
+          <div className="flex flex-wrap justify-start gap-2 md:gap-3 mb-6">
             <a 
               href="mailto:vigneshayyanarm05@gmail.com" 
-              className="text-tertiary hover:text-secondary transition-colors duration-300 flex items-center gap-2"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary/20 border border-white/20 hover:border-secondary/50 text-tertiary hover:text-secondary transition-all duration-300 hover:scale-110 flex items-center justify-center group"
             >
-              <i className="fas fa-envelope text-lg"></i>
-              <span>vigneshayyanarm05@gmail.com</span>
+              <i className="fas fa-envelope text-sm group-hover:scale-110 transition-transform duration-300"></i>
             </a>
+            
             <a 
               href="https://www.linkedin.com/in/vigneshayyanar-m-3b1823293/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-tertiary hover:text-secondary transition-colors duration-300 flex items-center gap-2"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-blue-500/20 border border-white/20 hover:border-blue-400/50 text-tertiary hover:text-blue-400 transition-all duration-300 hover:scale-110 flex items-center justify-center group"
             >
-              <i className="fab fa-linkedin text-lg"></i>
-              <span>LinkedIn Profile</span>
+              <i className="fab fa-linkedin text-sm group-hover:scale-110 transition-transform duration-300"></i>
             </a>
+            
             <a 
               href="https://github.com/MVigneshayyanar" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-tertiary hover:text-secondary transition-colors duration-300 flex items-center gap-2"
+              className="w-10 h-10 rounded-full bg-white/10 hover:bg-gray-500/20 border border-white/20 hover:border-gray-300/50 text-tertiary hover:text-gray-300 transition-all duration-300 hover:scale-110 flex items-center justify-center group"
             >
-              <i className="fab fa-github text-lg"></i>
-              <span>GitHub Profile</span>
+              <i className="fab fa-github text-sm group-hover:scale-110 transition-transform duration-300"></i>
             </a>
           </div>
-        </div>
-        
-        <div className="border-t border-gray-700 pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div>
-              <p className="text-text-muted text-sm">© 2025 Vigneshayyanar M. All rights reserved.</p>
-            </div>
-            <div className="flex items-center gap-4 text-sm">
-              <span className="text-secondary font-bold">Flutter Developer</span>
-              <span className="text-text-muted">|</span>
-              <span className="text-secondary font-bold">Open for Opportunities</span>
+          
+          {/* Bottom Section */}
+          <div className="border-t border-white/10 pt-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-xs sm:text-sm">
+              <div className="text-text-muted">
+                © 2025 Vigneshayyanar M. All rights reserved.
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-secondary font-medium">Flutter Developer</span>
+                <span className="text-text-muted">•</span>
+                <span className="text-secondary font-medium">Open for Opportunities</span>
+              </div>
             </div>
           </div>
+          
         </div>
       </div>
     </footer>
