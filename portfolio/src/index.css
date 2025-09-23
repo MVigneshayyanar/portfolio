@@ -1,0 +1,58 @@
+/* All @import statements must come FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+/* Tailwind directives (v3 syntax) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom styles come AFTER the imports */
+:root {
+  font-family: 'Roboto', sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 py-8;
+  }
+  
+  .heading-primary {
+    @apply font-montserrat text-2xl md:text-3xl text-text-light border-b-2 border-secondary inline-block pb-2 mb-8;
+  }
+  
+  .card-hover {
+    @apply hover:border-secondary hover:-translate-y-2 hover:shadow-lg hover:shadow-secondary/30 transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-secondary text-white px-6 py-3 rounded-full font-bold transition-all duration-300 hover:bg-tertiary hover:text-black inline-block;
+  }
+}
