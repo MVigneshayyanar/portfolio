@@ -19,7 +19,7 @@ function Navigation() {
               <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-green-400 rounded-full border-2 border-black"></div>
             </div>
             <div className="text-center md:text-left">
-              <div className="font-montserrat font-bold text-xl sm:text-2xl text-text-light">Vigneshayyanar</div>
+              <div className="font-montserrat font-bold text-xl sm:text-2xl text-text-light">VIGNESHAYYANAR</div>
               <p className="text-sm sm:text-base text-tertiary font-medium">Flutter Developer</p>
             </div>
           </div>
