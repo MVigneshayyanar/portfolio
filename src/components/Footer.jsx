@@ -1,6 +1,7 @@
 import React from 'react';
+import ViewCounter from './ViewCounter';
 
-function Footer() {
+function Footer({ totalViews, liveViewers }) {
   return (
     <footer className="p-3 md:p-4">
       <div className="max-w-6xl mx-auto">
@@ -49,6 +50,11 @@ function Footer() {
           
           {/* Bottom Section */}
           <div className="border-t border-white/10 pt-4">
+            {/* View Counter - Top of bottom section */}
+            <div className="mb-4 flex justify-center">
+              <ViewCounter totalViews={totalViews} liveViewers={liveViewers} />
+            </div>
+            
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-xs sm:text-sm">
               <div className="text-text-muted">
                 © 2025 Vigneshayyanar M. All rights reserved.

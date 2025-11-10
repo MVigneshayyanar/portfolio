@@ -8,8 +8,11 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Footer from './components/Footer';
+import useViewCounter from './hooks/useViewCounter';
 
 function App() {
+  const { totalViews, liveViewers, isOnline } = useViewCounter();
+
   return (
     <div className="relative min-h-screen bg-primary-bg text-text-light overflow-x-hidden">
       {/* Full Screen DotGrid Background */}
@@ -29,7 +32,7 @@ function App() {
       
       {/* All Portfolio Content */}
       <div className="relative z-10 w-full">
-        <Navigation />
+        <Navigation totalViews={totalViews} liveViewers={liveViewers} />
         <main>
           <About />
           <Skills />
@@ -37,7 +40,7 @@ function App() {
           <Experience />
           <Education />
         </main>
-        <Footer />
+        <Footer totalViews={totalViews} liveViewers={liveViewers} />
       </div>
     </div>
   );
