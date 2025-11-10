@@ -84,7 +84,7 @@ function Skills() {
       </div>
 
       {/* Floating Badges */}
-     <div className="mt-116">
+     <div className="mt-16">
   <div className="flex flex-wrap justify-center items-center gap-4">
     {[
       { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', gradient: 'from-blue-400 to-cyan-400' },
