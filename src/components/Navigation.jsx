@@ -1,9 +1,8 @@
 import React from 'react';
 import profilePhoto from '../assets/LinkedIN.jpg';
 import resumePdf from '../assets/VIGNESHAYYANAR.pdf';
-import ViewCounter from './ViewCounter';
 
-function Navigation({ totalViews, liveViewers }) {
+function Navigation() {
   return (
     <nav className="sticky top-0 z-50 p-3 md:p-4">
       <div className="max-w-6xl mx-auto">
@@ -66,12 +65,6 @@ function Navigation({ totalViews, liveViewers }) {
               </a>
             </div>
           </div>
-          
-          {/* View Counter Section */}
-          <div className="flex justify-center md:justify-end border-t border-white/10 pt-3">
-            <ViewCounter totalViews={totalViews} liveViewers={liveViewers} variant="compact" />
-          </div>
-          
         </div>
       </div>
     </nav>
