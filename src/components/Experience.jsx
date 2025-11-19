@@ -3,9 +3,19 @@ import React from 'react';
 function Experience() {
   const experiences = [
     {
+      company: 'Maestromind',
+      position: 'Full Stack App Developer Intern',
+      duration: 'Nov 2025 – Present · Remote',
+      responsibilities: [
+        'Developing full-stack web applications using modern technologies.',
+        'Working on both frontend and backend development tasks.',
+        'Collaborating with the team to deliver scalable solutions.'
+      ]
+    },
+    {
       company: 'Ignito Corporation',
       position: 'Flutter App Developer Intern',
-      duration: 'Jul 2025 – Present · Remote',
+      duration: 'Jul 2025 – Aug 2025 · Remote',
       responsibilities: [
         'Developed mobile applications with Flutter and Firebase integration.',
         'Worked on real-time database, authentication, and UI/UX improvements.'
