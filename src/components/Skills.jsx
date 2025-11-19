@@ -36,7 +36,7 @@ function Skills() {
 
   return (
     <section id="skills" className="section-container">
-      <h2 className="heading-primary text-center">
+      <h2 className="heading-primary text-center text-light-secondary dark:text-text-light">
         Skills & Technologies
       </h2>
       
@@ -57,7 +57,7 @@ function Skills() {
               <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} rounded-3xl rotate-12 group-hover:rotate-0 transition-transform duration-500`}></div>
               
               {/* Card Content */}
-              <div className="relative bg-card-bg rounded-3xl p-6 h-full flex flex-col items-center justify-center border border-tertiary group-hover:border-transparent transition-all duration-500 hover:scale-105">
+              <div className="relative bg-gray-200 dark:bg-card-bg rounded-3xl p-6 h-full flex flex-col items-center justify-center border border-gray-300 dark:border-tertiary group-hover:border-transparent transition-all duration-500 hover:scale-105 shadow-lg dark:shadow-none">
                 {/* Icon */}
                 <div className="mb-3 group-hover:scale-110 transition-transform duration-300">
                   <img 
@@ -69,13 +69,13 @@ function Skills() {
                 </div>
                 
                 {/* Skill Name */}
-                <h3 className="text-text-light font-semibold text-sm text-center leading-tight">
+                <h3 className="text-light-secondary dark:text-text-light font-semibold text-sm text-center leading-tight">
                   {skill.name}
                 </h3>
               </div>
               
               {/* Tooltip */}
-              <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 bg-black/90 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+              <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 bg-gray-800/90 dark:bg-black/90 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
                 {skill.description}
               </div>
             </div>
@@ -101,14 +101,14 @@ function Skills() {
         className="group relative"
       >
         <div className={`relative bg-gradient-to-r ${tech.gradient} p-0.5 rounded-2xl hover:scale-105 transition-all duration-300`}>
-          <div className="bg-card-bg rounded-2xl px-6 py-3 flex items-center space-x-3">
+          <div className="bg-gray-200 dark:bg-card-bg rounded-2xl px-6 py-3 flex items-center space-x-3">
             <img 
               src={tech.icon} 
               alt={`${tech.name} icon`}
               className="w-6 h-6 object-contain group-hover:scale-110 transition-transform duration-300"
               loading="lazy"
             />
-            <span className="text-text-light text-sm font-medium">
+            <span className="text-light-secondary dark:text-text-light text-sm font-medium">
               {tech.name}
             </span>
           </div>

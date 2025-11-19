@@ -21,22 +21,22 @@ function Projects() {
 
   return (
     <section id="projects" className="max-w-6xl mx-auto px-4 py-8">
-      <h2 className="font-montserrat text-2xl md:text-3xl text-text-light border-b-2 border-secondary inline-block pb-2 mb-8">
+      <h2 className="font-montserrat text-2xl md:text-3xl text-light-secondary dark:text-text-light border-b-2 border-light-primary dark:border-secondary inline-block pb-2 mb-8">
         Projects
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <div 
             key={index} 
-            className="backdrop-blur-sm  p-8 rounded-xl border border-white/20 hover:border-secondary hover:-translate-y-2 hover:shadow-lg hover:shadow-secondary/30 transition-all duration-300 "
+            className="backdrop-blur-sm bg-gray-200/90 dark:bg-transparent p-8 rounded-xl border border-gray-300 dark:border-white/20 hover:border-light-primary dark:hover:border-secondary hover:-translate-y-2 shadow-lg dark:shadow-none hover:shadow-xl hover:shadow-light-primary/30 dark:hover:shadow-secondary/30 transition-all duration-300"
           >
-            <h3 className="text-secondary text-xl font-semibold mb-4">{project.title}</h3>
-            <p className="text-text-muted mb-6 leading-relaxed">{project.description}</p>
+            <h3 className="text-light-primary dark:text-secondary text-xl font-semibold mb-4">{project.title}</h3>
+            <p className="text-gray-700 dark:text-text-muted mb-6 leading-relaxed">{project.description}</p>
             <a 
               href={project.githubUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block bg-secondary text-white px-6 py-3 rounded-full font-bold transition-all duration-300 hover:bg-tertiary hover:text-black"
+              className="inline-block bg-light-primary dark:bg-secondary text-white px-6 py-3 rounded-full font-bold transition-all duration-300 hover:bg-light-tertiary dark:hover:bg-tertiary hover:text-white dark:hover:text-black"
             >
               View on GitHub
             </a>

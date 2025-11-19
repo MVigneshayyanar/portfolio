@@ -44,23 +44,23 @@ function Experience() {
 
   return (
     <section id="experience" className="max-w-6xl mx-auto px-4 py-8">
-      <h2 className="font-montserrat text-2xl md:text-3xl text-text-light border-b-2 border-secondary inline-block pb-2 mb-8">
+      <h2 className="font-montserrat text-2xl md:text-3xl text-light-secondary dark:text-text-light border-b-2 border-light-primary dark:border-secondary inline-block pb-2 mb-8">
         Experience
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
         {experiences.map((exp, index) => (
           <div 
             key={index} 
-            className="backdrop-blur-sm  p-8 rounded-xl border border-white/20 hover:border-secondary hover:-translate-y-2 hover:shadow-lg hover:shadow-secondary/30 transition-all duration-300 "
+            className="backdrop-blur-sm bg-gray-200/90 dark:bg-transparent p-8 rounded-xl border border-gray-300 dark:border-white/20 hover:border-light-primary dark:hover:border-secondary hover:-translate-y-2 shadow-lg dark:shadow-none hover:shadow-xl hover:shadow-light-primary/30 dark:hover:shadow-secondary/30 transition-all duration-300"
           >
-            <h3 className="text-secondary text-xl font-semibold mb-2">{exp.company}</h3>
-            <p className="text-text-muted mb-4">
-              <strong className="text-text-light">{exp.position}</strong><br />
+            <h3 className="text-light-primary dark:text-secondary text-xl font-semibold mb-2">{exp.company}</h3>
+            <p className="text-gray-700 dark:text-text-muted mb-4">
+              <strong className="text-light-secondary dark:text-text-light">{exp.position}</strong><br />
               {exp.duration}
             </p>
             <ul className="space-y-2">
               {exp.responsibilities.map((item, itemIndex) => (
-                <li key={itemIndex} className="text-text-muted text-sm leading-relaxed">
+                <li key={itemIndex} className="text-gray-700 dark:text-text-muted text-sm leading-relaxed">
                   • {item}
                 </li>
               ))}
