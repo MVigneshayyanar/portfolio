@@ -10,7 +10,7 @@ function Projects() {
       title: 'MaxBillUp',
       description: 'A Flutter billing app for store owners to create invoices, manage staff, and print bills via Bluetooth-connected printers. Features role management and seamless printing integration.',
       githubUrl: 'https://github.com/MVigneshayyanar/MaxBillUp',
-      tags: ['Flutter', 'Bluetooth', 'Billing'],
+      tags: ['Flutter', 'Firebase', 'Bluetooth', 'Billing'],
       emoji: '🧾'
     },
     {
@@ -24,7 +24,7 @@ function Projects() {
       title: 'Attendance Management System',
       description: 'A Flutter + Firebase system for students and staff with role-based login, attendance tracking, notifications, and reports.',
       githubUrl: 'https://github.com/MVigneshayyanar/camsvirtusa.git',
-      tags: ['Flutter', 'Firebase', 'Auth'],
+      tags: ['Flutter', 'Firebase'],
       emoji: '📊'
     },
     {

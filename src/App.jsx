@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-primary-bg text-text-light overflow-x-hidden">
+    <div className="relative min-h-screen bg-primary-bg text-text-light">
       {/* Full Screen DotGrid Background */}
       <div className="fixed inset-0 z-0 w-full h-full">
         <DotGrid
