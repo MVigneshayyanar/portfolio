@@ -1,67 +1,120 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 function Footer() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  const socialLinks = [
+    { href: "mailto:vigneshayyanarm05@gmail.com", icon: "fas fa-envelope", label: "Email", hoverColor: "hover:text-red-400 hover:border-red-400/50" },
+    { href: "https://www.linkedin.com/in/vigneshayyanar-m-3b1823293/", icon: "fab fa-linkedin", label: "LinkedIn", hoverColor: "hover:text-blue-400 hover:border-blue-400/50" },
+    { href: "https://github.com/MVigneshayyanar", icon: "fab fa-github", label: "GitHub", hoverColor: "hover:text-white hover:border-white/50" }
+  ];
+
   return (
-    <footer className="p-3 md:p-4">
+    <footer className="p-3 md:p-4" ref={ref}>
       <div className="max-w-6xl mx-auto">
-        <div className="backdrop-blur-sm bg-gray-200/90 dark:bg-black/30 rounded-2xl px-4 py-3 md:px-6 md:py-4 border border-gray-300 dark:border-white/10 shadow-lg dark:shadow-none">
-          
+        <motion.div
+          className="backdrop-blur-sm bg-black/30 rounded-2xl px-4 py-4 md:px-6 md:py-6 border border-white/10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+
           {/* Header Section */}
-          <div className="flex items-center gap-3 mb-4">
+          <motion.div
+            className="flex items-center gap-3 mb-4"
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ delay: 0.2 }}
+          >
+            <motion.span
+              className="text-3xl"
+              animate={{
+                rotate: [0, 14, -8, 14, -4, 10, 0],
+              }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+            >
+              👋
+            </motion.span>
             <div>
-              <h3 className="font-montserrat font-bold text-base sm:text-lg text-light-secondary dark:text-text-light">Let's Connect!</h3>
-              <p className="text-xs text-light-primary dark:text-tertiary">Ready to collaborate</p>
+              <h3 className="font-montserrat font-bold text-base sm:text-lg text-text-light">Let's Connect!</h3>
+              <p className="text-xs text-tertiary">Ready to collaborate</p>
             </div>
-          </div>
-          
+          </motion.div>
+
           {/* Main Content */}
-          <div className="text-gray-700 dark:text-text-muted text-sm sm:text-base leading-relaxed mb-6">
-            Ready to bring your app ideas to life? I'm always excited to work on innovative Flutter projects and collaborate with amazing teams.
-          </div>
-          
-          {/* Social Links - Compact Style */}
-          <div className="flex flex-wrap justify-start gap-2 md:gap-3 mb-6">
-            <a 
-              href="mailto:vigneshayyanarm05@gmail.com" 
-              className="w-10 h-10 rounded-full bg-gray-300 dark:bg-white/10 hover:bg-light-primary/20 border border-gray-400 dark:border-white/20 hover:border-light-primary/50 text-light-secondary dark:text-tertiary hover:text-light-primary transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+          <motion.div
+            className="text-text-muted text-sm sm:text-base leading-relaxed mb-5"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.3 }}
+          >
+            Ready to bring your app ideas to life? I'm always excited to work on innovative <span className="text-secondary font-medium">Flutter projects</span> and collaborate with amazing teams.
+          </motion.div>
+
+          {/* Social Links & CTA */}
+          <motion.div
+            className="flex flex-wrap items-center gap-3 mb-5"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.4 }}
+          >
+            {socialLinks.map((link, index) => (
+              <motion.a
+                key={index}
+                href={link.href}
+                target={link.href.startsWith('mailto') ? undefined : "_blank"}
+                rel={link.href.startsWith('mailto') ? undefined : "noopener noreferrer"}
+                className={`w-11 h-11 rounded-full bg-white/10 border border-white/20 text-tertiary transition-all duration-300 flex items-center justify-center ${link.hoverColor}`}
+                whileHover={{ scale: 1.15, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label={link.label}
+              >
+                <i className={`${link.icon} text-base`}></i>
+              </motion.a>
+            ))}
+
+            {/* CTA Button */}
+            <motion.a
+              href="mailto:vigneshayyanarm05@gmail.com"
+              className="inline-flex items-center gap-2 bg-secondary text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all duration-300 hover:bg-tertiary hover:text-black ml-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <i className="fas fa-envelope text-sm group-hover:scale-110 transition-transform duration-300"></i>
-            </a>
-            
-            <a 
-              href="https://www.linkedin.com/in/vigneshayyanar-m-3b1823293/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-gray-300 dark:bg-white/10 hover:bg-blue-500/20 border border-gray-400 dark:border-white/20 hover:border-blue-400/50 text-light-secondary dark:text-tertiary hover:text-blue-400 transition-all duration-300 hover:scale-110 flex items-center justify-center group"
-            >
-              <i className="fab fa-linkedin text-sm group-hover:scale-110 transition-transform duration-300"></i>
-            </a>
-            
-            <a 
-              href="https://github.com/MVigneshayyanar" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-gray-300 dark:bg-white/10 hover:bg-gray-500/20 border border-gray-400 dark:border-white/20 hover:border-gray-600 dark:hover:border-gray-300/50 text-light-secondary dark:text-tertiary hover:text-gray-600 dark:hover:text-gray-300 transition-all duration-300 hover:scale-110 flex items-center justify-center group"
-            >
-              <i className="fab fa-github text-sm group-hover:scale-110 transition-transform duration-300"></i>
-            </a>
-          </div>
-          
+              <i className="fas fa-paper-plane"></i>
+              Get In Touch
+            </motion.a>
+          </motion.div>
+
           {/* Bottom Section */}
-          <div className="border-t border-gray-300 dark:border-white/10 pt-4">
+          <motion.div
+            className="border-t border-white/10 pt-4"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.5 }}
+          >
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-xs sm:text-sm">
-              <div className="text-gray-700 dark:text-text-muted">
-                © 2025 Vigneshayyanar M. All rights reserved.
+              <div className="text-text-muted">
+                © 2025 <span className="text-secondary font-medium">Vigneshayyanar M</span>. All rights reserved.
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-light-primary dark:text-secondary font-medium">Flutter Developer</span>
-                <span className="text-gray-700 dark:text-text-muted">•</span>
-                <span className="text-light-primary dark:text-secondary font-medium">Open for Opportunities</span>
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-secondary font-medium bg-secondary/10 px-2.5 py-1 rounded-full border border-secondary/30 text-xs">
+                  Flutter Developer
+                </span>
+                <span className="text-green-400 font-medium bg-green-500/10 px-2.5 py-1 rounded-full border border-green-500/30 text-xs flex items-center gap-1.5">
+                  <motion.span
+                    className="w-1.5 h-1.5 rounded-full bg-green-400"
+                    animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  />
+                  Open for Opportunities
+                </span>
               </div>
             </div>
-          </div>
-          
-        </div>
+          </motion.div>
+
+        </motion.div>
       </div>
     </footer>
   );
