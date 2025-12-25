@@ -81,6 +81,7 @@ function Footer() {
               className="inline-flex items-center gap-2 bg-secondary text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all duration-300 hover:bg-tertiary hover:text-black ml-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              aria-label="Send email to Vigneshayyanar M"
             >
               <i className="fas fa-paper-plane"></i>
               Get In Touch

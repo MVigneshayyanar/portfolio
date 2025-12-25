@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import profilePhoto from '../assets/LinkedIN.jpg';
-import resumePdf from '../assets/VIGNESHAYYANAR.pdf';
+import resumePdf from '../assets/Vigneshayyanar_CV.pdf';
 
 function Navigation() {
   return (
